@@ -12,7 +12,7 @@ global workspace  "add directory"
 import delimited "$workspace/match_unmatch_sentimentr", varnames(1) clear
 keep mod_url element_id word_count sd ave_sentiment
 gener cleaning= substr(mod_url,1,8)
-	drop if cleaning!="https://" // deleting weird obs
+	drop if cleaning!="https://" 
 	drop cleaning
 save "$workspace/sentiment_info.dta", replace
 
